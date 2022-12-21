@@ -1,0 +1,25 @@
+﻿@model aula24_08_2022.Models.SomaModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Soma dos valores maiores</h2>
+
+@using (Html.BeginForm("Index", "Soma", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.LabelFor(m => m.Pri)
+    <br />
+    @Html.EditorFor(m => m.Pri)
+    <br />
+    @Html.LabelFor(m => m.Seg)
+    <br />
+    @Html.EditorFor(m => m.Seg)
+    <br />
+    @Html.LabelFor(m => m.Ter)
+    <br />
+    @Html.EditorFor(m => m.Ter)
+    <br />
+    <input type="submit" name="btnCalc" value="Somar" />
+}
+
+@ViewBag.Soma

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ProjetoProduto.Models._2610.ModelVETVet>
+
+<h2>Listar Veterinários</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.codVet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nomeVet)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codVet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomeVet)
+            </td>
+
+            <td>
+                @Html.ActionLink("Atualizar", "editarVETVet", new { id = item.codVet }) |
+                @Html.ActionLink("Excluir", "excluirVETVet", new { id = item.codVet }, new { onclick = "return confirm('Deseja realmente excluir?');" })
+            </td>
+        </tr>
+    }
+
+</table>

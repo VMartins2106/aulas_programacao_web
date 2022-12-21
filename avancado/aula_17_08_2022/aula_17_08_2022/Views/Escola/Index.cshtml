@@ -1,0 +1,22 @@
+﻿@model aula_17_08_2022.Models.ModelEscola
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Calcular evasão escolar</h2>
+
+@using (Html.BeginForm("Index", "Escola", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.LabelFor(m => m.Matriculados)
+    <br />
+    @Html.EditorFor(m => m.Matriculados)
+    <br />
+    @Html.LabelFor(m => m.Formados)
+    <br />
+    @Html.EditorFor(m => m.Formados)
+    <br />
+    <input type="submit" name="btnCalc" value="Calcular" />
+}
+
+@ViewBag.Evasao<br />
+@ViewBag.Texto

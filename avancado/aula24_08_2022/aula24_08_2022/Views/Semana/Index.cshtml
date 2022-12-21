@@ -1,0 +1,17 @@
+﻿@model aula24_08_2022.Models.SemanaModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Dia da semana</h2>
+
+@using (Html.BeginForm("Index", "Semana", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.LabelFor(m => m.Dia)
+    <br />
+    @Html.EditorFor(m => m.Dia)
+    <br />
+    <input type="submit" name="btnCalc" value="Verificar" />
+}
+
+@ViewBag.Dia

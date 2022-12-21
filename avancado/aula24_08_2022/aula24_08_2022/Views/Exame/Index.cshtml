@@ -1,0 +1,34 @@
+﻿@model aula24_08_2022.Models.ExameModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Verificação dos exames</h2>
+
+@using (Html.BeginForm("Index", "Exame", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.LabelFor(m => m.E1)
+    <br />
+    @Html.EditorFor(m => m.E1)
+    <br />
+    @Html.LabelFor(m => m.E2)
+    <br />
+    @Html.EditorFor(m => m.E2)
+    <br />
+    @Html.LabelFor(m => m.E3)
+    <br />
+    @Html.EditorFor(m => m.E3)
+    <br />
+    @Html.LabelFor(m => m.E4)
+    <br />
+    @Html.EditorFor(m => m.E4)
+    <br />
+    @Html.LabelFor(m => m.E5)
+    <br />
+    @Html.EditorFor(m => m.E5)
+    <br />
+    <input type="submit" name="btnCalc" value="Verificar" />
+}
+@ViewBag.Media
+<br />
+@ViewBag.Exame

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ProjetoProduto.Models._2610.ModelVETTipo>
+
+<h2>Listar Tipos</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.codTipoAnimal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipoAnimal)
+        </th>       
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codTipoAnimal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipoAnimal)
+            </td>
+
+            <td>
+                @Html.ActionLink("Atualizar", "editarVETTipo", new { id = item.codTipoAnimal }) |
+                @Html.ActionLink("Excluir", "excluirVETTipo", new { id = item.codTipoAnimal }, new { onclick = "return confirm('Deseja realmente excluir?');" })
+            </td>
+        </tr>
+    }
+
+</table>

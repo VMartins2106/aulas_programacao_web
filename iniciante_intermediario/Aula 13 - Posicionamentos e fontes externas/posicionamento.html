@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>POSICIONAMENTOS E FONTES EXTERNAS</title>
+	<style type="text/css">
+		h6{
+			font-size: 35px;
+			color: white;
+		}
+		#moldura{
+			position: absolute;
+			width: 300px;
+			height: 120px;
+			bottom: 300px;
+			right: 150px;
+			background-color: #ffcc00;
+		}
+		#moldura2{
+			position: absolute;
+			width: 300px;
+			height: 120px;
+			top: 220px;
+			left: 100px;
+			background-color: #ffcc00;
+		}
+		#meup{
+			color: red;
+			font-size: 25px;
+		}
+		.p_igual{
+			color: cornflowerblue;
+			font-size: 20px;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div id="moldura">
+		<h6>Elemento absoluto</h6>
+	</div>
+	<div id="moldura2">
+		<h6>Elemento absoluto 2</h6>
+	</div>
+	<p>Nada disso que está na página interfere no posicionamento do elemento absoluto.</p>
+	<p id="meup">Este é um parágrafo diferente</p>
+	<p class="p_igual">Este texto fica igual ao de baixo</p>
+	<p class="p_igual">Este texto fica igual ao de cima</p>
+</body>
+</html>

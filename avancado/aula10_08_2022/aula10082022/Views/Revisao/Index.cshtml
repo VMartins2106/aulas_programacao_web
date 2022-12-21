@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Aula 10 de Agosto</h2>
+
+    @using (Html.BeginForm("Index", "Revisao", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <label>Primeiro número</label>
+        <br />
+        <input type="text" name="txtn1" />
+        <br />
+        <label>Segundo número</label>
+        <br />
+        <input type="text" name="txtn2" />
+        <br />
+        <label>Terceiro número</label>
+        <br />
+        <input type="text" name="txtn3" />
+        <br />
+        <label>Quarto número</label>
+        <br />
+        <input type="text" name="txtn4" />
+        <br />
+        <br />
+        <input type="submit" name="btnOk" value="Calcular" />
+    }
+    <h4>
+    <br />
+    @ViewBag.Soma
+    <br />
+    <br />
+    @ViewBag.Media
+    <br />
+    <br />
+    @ViewBag.Res
+    </h4>

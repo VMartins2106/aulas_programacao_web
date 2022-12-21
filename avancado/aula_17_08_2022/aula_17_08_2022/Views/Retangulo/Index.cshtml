@@ -1,0 +1,22 @@
+﻿@model aula_17_08_2022.Models.ModelRetangulo
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Calcular área do retângulo</h2>
+
+@using (Html.BeginForm("Index", "Retangulo", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.LabelFor(m => m.Base)
+    <br />
+    @Html.EditorFor(m => m.Base)
+    <br />
+    @Html.LabelFor(m => m.Altura)
+    <br />
+    @Html.EditorFor(m => m.Altura)
+    <br />
+    <input type="submit" name="btnCalc" value="Calcular" />
+}
+
+@ViewBag.AreaRetangulo
+

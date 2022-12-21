@@ -1,0 +1,26 @@
+﻿@model aula_17_08_2022.Models.ModelVolume
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Calcular volume de uma caixa retangular</h2>
+
+@using (Html.BeginForm("Index", "Volume", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.LabelFor(m => m.Comprimento)
+    <br />
+    @Html.EditorFor(m => m.Comprimento)
+    <br />
+    @Html.LabelFor(m => m.Largura)
+    <br />
+    @Html.EditorFor(m => m.Largura)
+    <br />
+    @Html.LabelFor(m => m.Altura)
+    <br />
+    @Html.EditorFor(m => m.Altura)
+    <br />
+    <input type="submit" name="btnCalc" value="Calcular" />
+}
+
+@ViewBag.Volume
+

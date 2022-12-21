@@ -1,0 +1,20 @@
+﻿@model aula24_08_2022.Models.PostoModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Posto de combustíveis</h2>
+
+@using (Html.BeginForm("Index", "Posto", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.LabelFor(m => m.a_g)
+    <br />
+    @Html.EditorFor(m => m.a_g)
+    <br />
+    @Html.LabelFor(m => m.litros)
+    <br />
+    @Html.EditorFor(m => m.litros)
+    <br />
+    <input type="submit" name="btnCalc" value="Calcular" />
+}
+@ViewBag.Posto

@@ -1,0 +1,60 @@
+﻿@model ProjetoProduto.Models._2610.ModelVETCliente
+@{
+    ViewBag.Title = "editarCliente";
+}
+
+<h2>editarCliente</h2>
+
+<div class="center">
+    @using (Html.BeginForm("editarVETCliente", "ClienteVET", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group space-around-flex">
+                <div class="">
+                    @Html.LabelFor(model => model.nomeCliente, htmlAttributes: new { @class = "control-label col-md-2" })
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.nomeCliente, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.nomeCliente, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group space-around-flex">
+                <div class="">
+                    @Html.LabelFor(model => model.telefoneCliente, htmlAttributes: new { @class = "control-label col-md-2" })
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.telefoneCliente, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.telefoneCliente, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group center">
+                <div>
+                    @Html.LabelFor(model => model.emailCliente, htmlAttributes: new { @class = "control-label col-md-2" })
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.emailCliente, new { htmlAttributes = new { @class = "form-control", placeholder = "Digite a senha" } })
+                    @Html.ValidationMessageFor(model => model.emailCliente, "", new { @class = "text-danger" })
+                </div>
+            </div>           
+            <div class="form-group center">
+                <div class="col-md-10">
+                    @ViewBag.msg <br />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Salvar Cliente" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    }
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

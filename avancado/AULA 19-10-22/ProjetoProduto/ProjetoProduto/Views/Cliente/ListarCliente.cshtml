@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ProjetoProduto.Models.ModelCliente>
+
+<h2>Listar Clientes</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.codCli)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nomeCli)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.senha)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codCli)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomeCli)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.senha)
+            </td>
+
+            <td>
+                @Html.ActionLink("Atualizar", "editarCliente", new { id = item.codCli }) |
+                @Html.ActionLink("Excluir", "excluirCliente", new { id = item.codCli }, new { onclick = "return confirm('Deseja realmente excluir?');" })
+            </td>
+        </tr>
+    }
+
+</table>

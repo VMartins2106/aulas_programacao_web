@@ -1,0 +1,25 @@
+﻿@model aula_17_08_2022.Models.ModelTrapezio
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Calcular área do trapézio</h2>
+
+@using (Html.BeginForm("Index", "Trapezio", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.LabelFor(m => m.Bmaior)
+    <br />
+    @Html.EditorFor(m => m.Bmaior)
+    <br />
+    @Html.LabelFor(m => m.Bmenor)
+    <br />
+    @Html.EditorFor(m => m.Bmenor)
+    <br />
+    @Html.LabelFor(m => m.Altura)
+    <br />
+    @Html.EditorFor(m => m.Altura)
+    <br />
+    <input type="submit" name="btnCalc" value="Calcular" />
+}
+
+@ViewBag.Area

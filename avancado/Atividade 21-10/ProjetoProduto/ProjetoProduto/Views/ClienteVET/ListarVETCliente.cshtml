@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ProjetoProduto.Models._2610.ModelVETCliente>
+
+<h2>Listar Clientes</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.codCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nomeCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefoneCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emailCliente)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomeCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefoneCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.emailCliente)
+            </td>
+
+            <td>
+                @Html.ActionLink("Atualizar", "editarVETCliente", new { id = item.codCliente }) |
+                @Html.ActionLink("Excluir", "excluirVETCliente", new { id = item.codCliente }, new { onclick = "return confirm('Deseja realmente excluir?');" })
+            </td>
+        </tr>
+    }
+
+</table>

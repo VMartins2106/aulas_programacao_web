@@ -1,0 +1,32 @@
+﻿@model aula_17_08_2022.Models.ModelMedia
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Exemplo média</h2>
+
+@using (Html.BeginForm("Index", "Media", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.LabelFor(m => m.Jan)
+    <br />
+    @Html.EditorFor(m => m.Jan)
+    <br />
+    @Html.LabelFor(m => m.Fev)
+    <br />
+    @Html.EditorFor(m => m.Fev)
+    <br />
+    @Html.LabelFor(m => m.Mar)
+    <br />
+    @Html.EditorFor(m => m.Mar)
+    <br />
+    @Html.LabelFor(m => m.Abr)
+    <br />
+    @Html.EditorFor(m => m.Abr)
+    <br />
+    <input type="submit" name="btnCalc" value="Calcular" />
+}
+
+@ViewBag.Media<br />
+@ViewBag.Soma<br />
+@ViewBag.Res
+

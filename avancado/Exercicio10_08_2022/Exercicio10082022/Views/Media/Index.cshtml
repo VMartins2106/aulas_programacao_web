@@ -1,0 +1,33 @@
+﻿@model Exercicio10082022.Models.ModelMedia
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Exemplo média</h2>
+
+@using (Html.BeginForm("Index", "Media", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.LabelFor(a => a.N1)
+    <br />
+    @Html.EditorFor(a => a.N1)
+    <br />
+    @Html.LabelFor(a => a.N2)
+    <br />
+    @Html.EditorFor(a => a.N2)
+    <br />
+    @Html.LabelFor(a => a.N3)
+    <br />
+    @Html.EditorFor(a => a.N3)
+    <br />
+    @Html.LabelFor(a => a.N4)
+    <br />
+    @Html.EditorFor(a => a.N4)
+    <br />
+    <br />
+    <input type="submit" name="btnOk" value="Calcular" />
+}
+@ViewBag.Soma
+<br />
+@ViewBag.Media
+<br />
+@ViewBag.Res

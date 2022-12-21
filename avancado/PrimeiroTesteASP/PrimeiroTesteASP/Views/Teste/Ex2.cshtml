@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Ex2";
+}
+
+<h2>Exercício 2</h2>
+
+<form action="Ex2" method="post">
+
+    Peso:
+    <br />
+    <input type="text" name="peso" value="" />
+    <br />
+    Altura:
+    <br />
+    <input type="text" name="altura" value="" />
+    <br />
+    <br />
+    <input type="submit" name="btnOk" value="Calcular" />
+    <br />
+
+</form>
+
+    <br />
+    Seu imc é: @ViewBag.ResIMC
+    <br />
+    Categoria: @ViewBag.Avaliacao

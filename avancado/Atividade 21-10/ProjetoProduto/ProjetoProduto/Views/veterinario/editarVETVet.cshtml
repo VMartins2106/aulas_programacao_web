@@ -1,0 +1,41 @@
+﻿@model ProjetoProduto.Models._2610.ModelVETVet
+@{
+    ViewBag.Title = "editarVet";
+}
+
+<h2>editarCliente</h2>
+
+<div class="center">
+    @using (Html.BeginForm("editarVETVet", "veterinario", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group space-around-flex">
+                <div class="">
+                    @Html.LabelFor(model => model.nomeVet, htmlAttributes: new { @class = "control-label col-md-2" })
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.nomeVet, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.nomeVet, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group center">
+                <div class="col-md-10">
+                    @ViewBag.msg <br />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Salvar Veterinário" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    }
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
